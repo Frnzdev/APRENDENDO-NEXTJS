@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { PostProps } from "../page";
+
 import { PostInfo } from "./_components/post";
 
 export default async function DatailPost({

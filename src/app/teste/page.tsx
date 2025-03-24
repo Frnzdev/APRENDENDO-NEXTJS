@@ -2,8 +2,14 @@
 
 import { useEffect, useState } from "react";
 
+interface Post {
+  id: number;
+  title: string;
+  body: string;
+}
+
 export default function PageTeste() {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
     fetch("https://dummyjson.com/posts")
@@ -18,7 +24,7 @@ export default function PageTeste() {
       </h1>
 
       <div className="flex flex-col gap-4 mx-2">
-        {posts.map((post: any) => (
+        {posts.map((post: Post) => (
           <div key={post.id} className="bg-gray-200 p-4 rounded-md">
             <h2 className="font-bold">{post.title}</h2>
             <p>{post.body}</p>
